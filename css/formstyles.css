@@ -1,0 +1,18 @@
+<style>
+        .btn-group {
+            font: 700 1em Tahoma, Arial, Verdana, sans-serif;
+            color: #fff; background-color: #59B0E5;
+            border: 1px solid #0074a5;
+            border-top: 1px solid #004370;
+            border-left: 1px solid #004370;
+            cursor: pointer;
+        }
+        .btn-group {
+            width: auto; /* ie */
+            overflow: visible; /* ie */
+            padding: 3px 8px 2px 6px; /* ie */
+        }
+        .btn-group[type] {
+            padding: 4px 8px 4px 6px; /* firefox */
+        }
+    </style>
