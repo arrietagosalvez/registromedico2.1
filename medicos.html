@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Registro Medico - GG-EA</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <style>
+        .btn-group {
+            font: 400 1em system-ui, -apple-system, "Segoe UI", sans-serif;
+            color: #fff;
+            background-color: #59B0E5;
+            border: 0px solid #0074a5;
+            border-top: 0px solid #004370;
+            border-left: 0px solid #004370;
+            cursor: pointer;
+            width: auto;
+            /* ie */
+            overflow: visible;
+            /* ie */
+            padding: 1px 5px 2px 2px;
+            /* ie */
+
+            padding: 1px 4px 2px 2px;
+            /* firefox */
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark justify-content-center">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html"><img src="images/corazon.png" />Registro Medico</a>
+        <!-- Sidebar Toggle-->
+        <!--<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            -->
+        <div class="btn-group" id="btngroup">
+            <button type="button" onclick="location.href='medicos.html'" class="btn btn-default"><img
+                    src="images/menu/med.png" height="17" width="17" /><br />Medicos</button>
+            <button type="button" onclick="location.href='reportes.html'" class="btn btn-default"><img
+                    src="images/menu/report.png" height="17" width="17" /><br />Reportes</button>
+            <button type="button" onclick="location.href='egresos.html'" class="btn btn-default"><img
+                    src="images/menu/gasto.png" height="17" width="17" /><br />Egresos</button>
+            <button type="button" onclick="location.href='pacientes.html'" class="btn btn-default"><img
+                    src="images/menu/paciente.png" height="17" width="17" /><br />Pacientes</button </div>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Buscar..." aria-label="Search for..."
+                        aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                            class="fas fa-search"></i></button>
+                </div>
+
+            </form>
+            <button type="button" onclick="location.href='agenda.html'" class="btn btn-default"><img
+                    src="images/menu/agenda.png" height="17" width="17" /><br />Agenda</button>
+            <button type="button" onclick="location.href='nuevo_paciente.html'" class="btn btn-default"><img
+                    src="images/menu/npaciente.png" height="17" width="17" /><br />Paciente Nuevo</button>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!"><img src="images/menu/ajustes.png" height="17"
+                                    width="17" /> Ajustes</a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#!"><img src="images/menu/salir.png" height="17"
+                                    width="17" /> Salir</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </nav>
+    <!--
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Escritorio
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
+                </nav>
+            </div>
+        -->
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <li class="mt-4"> </li>
+                <ol class="breadcrumb mb-4">
+                    <h1 class="breadcrumb-item active">Medicos</h1>
+                </ol>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-chart-area me-1"></i>
+                                Nuevo Medico
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <table>
+                                        <tr>
+                                            <td><button type="button" class="datatable-input">Nuevo Medico</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="datatable-input"  placeholder="Nombre" /></td>
+                                            <td><input type="text" class="datatable-input" placeholder="Apellido" /></td>
+
+                                        </tr>
+                                    </table>
+                                </form><canvas id="myAreaChart" width="100%" height="80"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Listado Medicos
+                    </div>
+                    <div class="card-body">
+                        <table id="datatablesSimple">
+                            <thead>
+                                <tr>
+                                    <th>Acciones</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Correo Electronico</th>
+                                    <th>Nacionalidad</th>
+
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Off ice</th>
+                                    <th>Ag e</th>
+                                    <th>Start date</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td align="center"><img src="images/editar.png" height="17" width="17" /> <img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    </td>
+                                    <td>01</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /> <img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>02</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /> <img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>03</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="15" width="15" /> <img
+                                            src="images/borrar.png" height="15" width="15" /></td>
+                                    <td>04</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>05</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /> <img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>06</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /> <img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>07</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /> <img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>08</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /> <img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>09</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>10</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>11</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>12</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>13</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>14</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>15</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>16</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>17</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/editar.png" height="17" width="17" /><img
+                                            src="images/borrar.png" height="17" width="17" /></td>
+                                    <td>19</td>
+                                    <td>Sillon</td>
+                                    <td>01sillon.beni@smd.com</td>
+                                    <td>Boliviana</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; GG-EA 2023</div>
+                    <div>
+                        <a href="#"> </a>
+                        &middot;
+                        <a href="#"> </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>

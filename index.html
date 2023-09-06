@@ -13,7 +13,7 @@
         <link rel="shortcut icon" href="images/favicon.png">
         <style>
         .btn-group {
-            font: 400 1em Varela Round, sans-serif;
+            font: 400 1em system-ui, -apple-system, "Segoe UI", sans-serif;
             color: #fff; background-color: #59B0E5;
             border: 0px solid #0074a5;
             border-top: 0px solid #004370;
@@ -33,16 +33,16 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-                                            <td>	01</td>
-            <a class="navbar-brand ps-3" href="index.html"><img src="images/corazon.png"  />Registro Medico</a>
+             <td>	01</td>
+            <a class="navbar-brand ps-3" href="index.html"><img src="images/corazon.png"/>Registro Medico</a>
             <!-- Sidebar Toggle-->
             <!--<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             -->
                 <div class="btn-group" id="btngroup">
-                <button type="button" class="btn btn-default">Medicos</button>
-                <button type="button" class="btn btn-default">Reportes</button>
-                <button type="button" class="btn btn-default">Egresos</button>
-                <button type="button" class="btn btn-default">Pacientes</button
+                <button type="button" onclick="location.href='medicos.html'" class="btn btn-default"><img src="images/menu/med.png" height ="17" width="17"/><br/>Medicos</button>
+                <button type="button" onclick="location.href='reportes.html'" class="btn btn-default"><img src="images/menu/report.png" height ="17" width="17"/><br/>Reportes</button>
+                <button type="button" onclick="location.href='egresos.html'" class="btn btn-default"><img src="images/menu/gasto.png" height ="17" width="17"/><br/>Egresos</button>
+                <button type="button" onclick="location.href='pacientes.html'" class="btn btn-default"><img src="images/menu/paciente.png" height ="17" width="17"/><br/>Pacientes</button
 
               </div>
             <!-- Navbar Search-->
@@ -53,16 +53,16 @@
                 </div>
                 
             </form>
-            <button type="button" class="btn btn-default">Agenda</button>
-                <button type="button" class="btn btn-default">Paciente Nuevo</button>
+            <button type="button" onclick="location.href='agenda.html'" class="btn btn-default"><img src="images/menu/agenda.png" height ="17" width="17"/><br/>Agenda</button>
+                <button type="button" onclick="location.href='nuevo_paciente.html'" class="btn btn-default"><img src="images/menu/npaciente.png" height ="17" width="17"/><br/>Paciente Nuevo</button>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Ajustes</a></li>
+                        <li><a class="dropdown-item" href="#!"><img src="images/menu/ajustes.png" height ="17" width="17"/> Ajustes</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Salir</a></li>
+                        <li><a class="dropdown-item" href="#!"><img src="images/menu/salir.png" height ="17" width="17"/> Salir</a></li>
                     </ul>
                 </li>
             </ul>
@@ -146,63 +146,18 @@
                         <ol class="breadcrumb mb-4">
                             <h1 class="breadcrumb-item active">Escritorio</h1>
                         </ol>
+                        
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Tarjeta Uno</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#"></a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#"></a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#"></a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#"></a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
+                            <div class="col-xl-12">
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-area me-1"></i>
-                                        Area de Ejemplo
+                                        Nuevo Medico
                                     </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="80"></canvas></div>
                                 </div>
                             </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Barras Ejemplo
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
@@ -213,7 +168,6 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                        
                                             <th>Acciones</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
@@ -226,151 +180,137 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
+                                            <th>Off ice</th>
+                                            <th>Ag e</th>
                                             <th>Start date</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
-                                            <td>	01</td>
-                                            <td>Edinburgh</td>
+                                            <td align="center"><img src="images/editar.png" height ="17" width="17" /> <img src="images/borrar.png" height ="17" width="17"/></td></td>
+                                            <td>01</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2011/04/25</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
-                                            <td>	02t</td>
-                                            <td>Tokyo</td>
+                                            <td><img src="images/editar.png"  height ="17" width="17"/> <img src="images/borrar.png" height ="17" width="17"/></td>
+                                            <td>02</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2011/07/25</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17"/> <img src="images/borrar.png" height ="17" width="17" /></td>
                                             <td>03</td>
-                                            <td>San Francisco</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2009/01/12</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="15" width="15" /> <img src="images/borrar.png" height ="15" width="15"/></td>
                                             <td>04</td>
-                                            <td>Edinburgh</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2012/03/29</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17" /><img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>05</td>
-                                            <td>Tokyo</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2008/11/28</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17" /> <img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>06</td>
-                                            <td>New York</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2012/12/02</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"   height ="17" width="17" /> <img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>07</td>
-                                            <td>San Francisco</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2012/08/06</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
-                                            <td>Integration Specialist</td>
-                                            <td>Tokyo</td>
-                                            <td>01sillon.beni@smd.com</td>
-                                            <td>2010/10/14</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17" /> <img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>08</td>
-                                            <td>San Francisco</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2009/09/15</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"   height ="17" width="17" /> <img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>09</td>
-                                            <td>Edinburgh</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2008/12/13</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"   height ="17" width="17" /><img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>10</td>
-                                            <td>London</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2008/12/19</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17" /><img src="images/borrar.png" height ="17" width="17" /></td>
                                             <td>11</td>
-                                            <td>Edinburgh</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2008/12/19</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"   height ="17" width="17" /><img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>12</td>
-                                            <td>San Francisco</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2008/10/16</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"   height ="17" width="17" /><img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>13</td>
-                                            <td>London</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2012/12/18</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"   height ="17" width="17" /><img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>14</td>
-                                            <td>London</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2010/03/17</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"   height ="17" width="17"/><img src="images/borrar.png" height ="17" width="17" /></td>
                                             <td>15</td>
-                                            <td>London</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2012/11/27</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17" /><img src="images/borrar.png" height ="17" width="17" /></td>
                                             <td>16</td>
-                                            <td>New York</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2010/06/09</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17" /><img src="images/borrar.png" height ="17" width="17" /></td>
                                             <td>17</td>
-                                            <td>New York</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2009/04/10</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
-                                            <td>18</td>
-                                            <td>London</td>
-                                            <td>41</td>
-                                            <td>2012/10/13</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="images/editar.png"  /><img src="images/borrar.png" /></td>
+                                            <td><img src="images/editar.png"  height ="17" width="17" /><img src="images/borrar.png"  height ="17" width="17" /></td>
                                             <td>19</td>
-                                            <td>Edinburgh</td>
+                                            <td>Sillon</td>
                                             <td>01sillon.beni@smd.com</td>
-                                            <td>2012/09/26</td>
+                                            <td>Boliviana</td>
                                         </tr>
                                         
                                     </tbody>
