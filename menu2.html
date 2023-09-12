@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Menu</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-fixed/">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .btn-group{
+            font: 400 1em system-ui, -apple-system, "Segoe UI", sans-serif;
+            color: #fff; background-color: #59B0E5;
+            border: 0px solid #0074a5;
+            border-top: 0px solid #004370;
+            border-left: 0px solid #004370;
+            cursor: pointer;
+        }
+        .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+      
+    </style>
+    
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-top-fixed.css" rel="stylesheet">
+  </head>
+ <body>
+    <div class="modal fade" id="n_paciente">
+    <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Nuevo Paciente</h2>
+            </div>
+            <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nonbre:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Apellido:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Apellido:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+        </div> 
+        </div>
+     </div>
+<div class="container" id="btn-group" >
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #b4dbf8;" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="medicos.html"><img src="images/corazon.png">&nbsp Registro Medico &nbsp</a>
+    <span></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">&nbsp
+            <button type="button" onclick="location.href='medicos.html'" class="btn btn-default"><img
+                src="images/menu/med.png" height="17" width="17"/><br/>Medicos</button>
+        </li>
+        <li>
+            <button type="button" onclick="location.href='reportes.html'" class="btn btn-default"><img src="images/menu/report.png" height ="17" width="17"/><br/>Reportes</button>
+        </li>
+        <li class="nav-item">
+            <button type="button" onclick="location.href='egresos.html'" class="btn btn-default"><img src="images/menu/gasto.png" height="17" width="17"/><br/>Egresos</button>
+        </li>
+        <li>
+            <button type="button" onclick="location.href='pacientes.html'" class="btn btn-default"><img src="images/menu/paciente.png" height="17" width="17"/><br />Pacientes</button>
+        </li>
+            <form class="d-flex" style="height: 50px;">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        <li>
+            <button type="button" onclick="location.href='agenda.html'" class="btn btn-default"><img src="images/menu/agenda.png" height ="17" width="17"/><br/>Agenda</button>
+        </li>
+        <li>
+            <button  class="btn btn-default" data-bs-toggle="modal" href="#n_paciente"><img src="images/menu/npaciente.png" height="17" width="17"/><br/>Nuevo Paciente</button>   
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+  
+<main class="container">
+  <div class="bg-light p-5 rounded">
+    <h1>Navbar example</h1>
+    <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
+    <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+  </div>
+</main>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
